@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Avatar from "@mui/material/Avatar";
 import "./styles/main.scss";
 import rock from "./images/rock.png";
@@ -7,6 +7,9 @@ import scissor from "./images/scissor.png";
 import robot from "./images/robot.png";
 
 function App() {
+  const [computer, setComputer] = useState();
+  console.log(Math.floor(Math.random() * 3));
+
   return (
     <div className="main-container">
       <div className="grid-layout">
@@ -23,6 +26,9 @@ function App() {
               <Avatar className="scissor" src={scissor} />
             </div>
           </div>
+        </div>
+        <div className="btn-wrapper">
+          <button className="btn">Play</button>
         </div>
         <div className="computer">
           <h2 className="title">Computer</h2>
